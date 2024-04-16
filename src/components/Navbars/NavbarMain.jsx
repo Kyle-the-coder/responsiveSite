@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { NavbarComp } from "./NavbarComp/NavbarComp";
 import { NavbarPhone } from "./NavbarPhone/NavbarPhone";
 import hamburger from "../../assets/menu.png";
+import "./navbar.css";
 
 export function NavbarMain() {
   const [isPhoneView, setIsPhoneView] = useState(false);
@@ -20,11 +21,7 @@ export function NavbarMain() {
   }, []);
   return (
     <div className="navbar-main-container">
-      {windowWidth <= 600 ? (
-        <img src={hamburger} width="10" />
-      ) : (
-        <h1>computer</h1>
-      )}
+      {windowWidth <= 600 ? <NavbarPhone /> : <NavbarComp />}
     </div>
   );
 }
