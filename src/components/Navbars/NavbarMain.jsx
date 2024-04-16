@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { NavbarComp } from "./NavbarComp/NavbarComp";
+import { NavbarPhone } from "./NavbarPhone/NavbarPhone";
 import hamburger from "../../assets/menu.png";
-import { useState } from "react";
 
 export function NavbarMain() {
   const [isPhoneView, setIsPhoneView] = useState(false);
