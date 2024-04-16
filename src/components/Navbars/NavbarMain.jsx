@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import hamburger from "../../assets/menu.png";
 import { useState } from "react";
 
-export function Navbar() {
+export function NavbarMain() {
   const [isPhoneView, setIsPhoneView] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
