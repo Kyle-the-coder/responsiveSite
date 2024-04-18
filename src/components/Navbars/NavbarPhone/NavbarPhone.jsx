@@ -14,7 +14,7 @@ export function NavbarPhone() {
       gsap.to(".navbar-phone-dropdown-main-container", {
         height: 0,
         opacity: 0,
-        duration: 1.5,
+        duration: 1,
         ease: "power4.out",
       });
       setTimeout(() => {
@@ -28,7 +28,7 @@ export function NavbarPhone() {
       gsap.from(".navbar-phone-dropdown-main-container", {
         height: 0,
         opacity: 0,
-        duration: 1.5,
+        duration: 1,
         ease: "power4.out",
       });
     }
@@ -56,7 +56,7 @@ export function NavbarPhone() {
           {links.map((link, index) => {
             return (
               <div key={link.linkName}>
-                <h3>{link.linkName}</h3>
+                <h3 className="dropdown-link-name">{link.linkName}</h3>
               </div>
             );
           })}
