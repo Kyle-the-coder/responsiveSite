@@ -28,6 +28,7 @@
 }
 .dropdown-link-name {
   font-size: 1.2rem;
+  font-family: "Font1", sans-serif;
   cursor: pointer;
 }
 .dropdown-link-name:hover {
