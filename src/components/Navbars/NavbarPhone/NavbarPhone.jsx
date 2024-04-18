@@ -19,7 +19,7 @@ export function NavbarPhone() {
       });
       setTimeout(() => {
         setIsHamburgerActive(false);
-      }, 1000);
+      }, 300);
     }
   }
 

@@ -17,7 +17,7 @@ function LandingPageMain() {
   }, []);
 
   return (
-    <div className="landingpage-main-container">
+    <div className="landing-page-main-container">
       {windowWidth <= 600 ? <LandingPagePhone /> : <LandingPageComp />}
     </div>
   );
