@@ -41,7 +41,7 @@ export function NavbarPhone() {
     { linkName: "Locations" },
     { linkName: "Contact Us" },
   ];
-  console.log(isHamburgerActive);
+
   return (
     <div className="navbar-phone-main-container">
       <img src={logo} width="200" />
