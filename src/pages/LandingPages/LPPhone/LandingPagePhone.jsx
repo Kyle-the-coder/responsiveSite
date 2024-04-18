@@ -1,3 +1,10 @@
+import bgImage from "../../../assets/solarPhoto.jpg";
+import "./landingpagephone.css";
+
 export function LandingPagePhone() {
-  return <h1>Landing Page Phone</h1>;
+  return (
+    <div className="landing-page-phone-main-container">
+      <img src={bgImage} className="landing-page-phone-bg-image" />
+    </div>
+  );
 }
