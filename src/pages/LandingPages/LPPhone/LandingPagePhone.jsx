@@ -1,5 +1,6 @@
 import bgImage from "../../../assets/solarPhoto.jpg";
 import top10 from "../../../assets/top-10.png";
+import quotes from "../../../assets/circle.png";
 import "./landingpagephone.css";
 
 export function LandingPagePhone() {
@@ -28,11 +29,12 @@ export function LandingPagePhone() {
         </div>
 
         <div className="landing-page-top-award-container">
-          <h4>
-            "Our closing percentage went from 6% to over 40% thanks to Solar
-            Lead Company Appointments"
+          <h4 className="font1 top-award-text">
+            Our closing percentage went from 6% to over 40% thanks to Solar Lead
+            Company Appointments"
           </h4>
           <img src={top10} className="top-award-image" />
+          <img src={quotes} className="quotes-image" />
         </div>
       </div>
 
