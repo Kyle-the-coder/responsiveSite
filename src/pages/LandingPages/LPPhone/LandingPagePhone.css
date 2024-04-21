@@ -85,6 +85,17 @@
   padding: 25px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3),
     inset -3px -3px 5px rgba(0, 0, 0, 0.3);
-  bottom: -20%;
+  bottom: -11%;
   left: 10;
+  position: relative;
+}
+
+.top-award-image {
+  width: 90px;
+  position: absolute;
+  top: -37%;
+  border-radius: 50%;
+  border: 5px solid white;
+  left: 37%;
+  z-index: 2;
 }

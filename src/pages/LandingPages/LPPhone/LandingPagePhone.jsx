@@ -32,6 +32,7 @@ export function LandingPagePhone() {
             "Our closing percentage went from 6% to over 40% thanks to Solar
             Lead Company Appointments"
           </h4>
+          <img src={top10} className="top-award-image" />
         </div>
       </div>
 
