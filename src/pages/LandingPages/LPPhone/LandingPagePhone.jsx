@@ -1,4 +1,5 @@
 import bgImage from "../../../assets/solarPhoto.jpg";
+import top10 from "../../../assets/top-10.png";
 import "./landingpagephone.css";
 
 export function LandingPagePhone() {
@@ -24,6 +25,13 @@ export function LandingPagePhone() {
           <button className="landing-page-phone-button">
             Book a Strategy Call
           </button>
+        </div>
+
+        <div className="landing-page-top-award-container">
+          <h4>
+            "Our closing percentage went from 6% to over 40% thanks to Solar
+            Lead Company Appointments"
+          </h4>
         </div>
       </div>
 
