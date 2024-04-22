@@ -63,7 +63,14 @@ body {
 .f3 {
   font-size: 3rem;
 }
+.f3-5 {
+  font-size: 3.5rem;
+}
 
 .f4 {
   font-size: 4rem;
+}
+
+.m0 {
+  margin: 0;
 }
