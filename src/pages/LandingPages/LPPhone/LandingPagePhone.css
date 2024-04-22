@@ -78,6 +78,7 @@
   width: 70%;
   display: flex;
   text-align: center;
+  line-height: 28px;
   justify-content: center;
   align-items: center;
   background-color: white;
@@ -95,7 +96,7 @@
 .top-award-image {
   width: 90px;
   position: absolute;
-  top: -37%;
+  top: -30%;
   border-radius: 50%;
   border: 5px solid white;
   left: 37%;
