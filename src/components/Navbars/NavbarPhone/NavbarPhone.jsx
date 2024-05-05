@@ -4,6 +4,7 @@ import hamburger from "../../../assets/menu.png";
 import logo from "../../../assets/solarLogo.jpeg";
 import "./navbarphone.css";
 import { useNavigate } from "react-router-dom";
+import LottieAnimation from "../../LottieAnimation";
 
 export function NavbarPhone() {
   const [isHamburgerActive, setIsHamburgerActive] = useState(false);
@@ -79,10 +80,13 @@ export function NavbarPhone() {
       />
       <img
         src={hamburger}
-        width="50"
         className="navbar-phone-hamburger"
         onClick={() => handleActivateHamburger()}
       />
+      <div className="navbar-phone-hamburger">
+        <LottieAnimation />
+      </div>
+
       {isHamburgerActive && (
         <div className="navbar-phone-dropdown-main-container">
           {links.map((link, index) => {
