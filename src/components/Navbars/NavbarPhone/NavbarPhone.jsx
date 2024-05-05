@@ -15,14 +15,13 @@ export function NavbarPhone() {
       setIsHamburgerActive(true);
     } else if (isHamburgerActive) {
       gsap.to(".navbar-phone-dropdown-main-container", {
-        height: 0,
-        opacity: 0,
-        duration: 1,
+        x: "100%",
+        duration: 0.6,
         ease: "power4.out",
+        onComplete: () => {
+          setIsHamburgerActive(false);
+        },
       });
-      setTimeout(() => {
-        setIsHamburgerActive(false);
-      }, 300);
     }
   }
 
@@ -30,8 +29,7 @@ export function NavbarPhone() {
     if (link === "/aboutUs") {
       navigate(link);
       gsap.to(".navbar-phone-dropdown-main-container", {
-        height: 0,
-        opacity: 0,
+        x: "100%",
         duration: 1,
         ease: "power4.out",
       });
@@ -44,9 +42,8 @@ export function NavbarPhone() {
   function handleHomeNavigate() {
     navigate("/");
     gsap.to(".navbar-phone-dropdown-main-container", {
-      height: 0,
-      opacity: 0,
-      duration: 1,
+      x: "100%",
+      duration: 0.6,
       ease: "power4.out",
     });
     setTimeout(() => {
@@ -57,8 +54,7 @@ export function NavbarPhone() {
   useEffect(() => {
     if (isHamburgerActive) {
       gsap.from(".navbar-phone-dropdown-main-container", {
-        height: 0,
-        opacity: 0,
+        x: "100%",
         duration: 1,
         ease: "power4.out",
       });
@@ -75,7 +71,12 @@ export function NavbarPhone() {
 
   return (
     <div className="navbar-phone-main-container">
-      <img src={logo} width="200" onClick={() => handleHomeNavigate()} />
+      <img
+        src={logo}
+        width="200"
+        className="navbar-logo"
+        onClick={() => handleHomeNavigate()}
+      />
       <img
         src={hamburger}
         width="50"
