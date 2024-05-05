@@ -4,11 +4,11 @@ import lottieFile from "../assets/lottieFile.json"; // Import your Lottie animat
 
 function LottieAnimation() {
   const containerRef = useRef(null);
-  let anim;
+  const animRef = useRef(null);
 
   useEffect(() => {
     // Initialize Lottie animation
-    anim = lottie.loadAnimation({
+    animRef.current = lottie.loadAnimation({
       container: containerRef.current,
       renderer: "svg", // Specify the renderer
       loop: false,
@@ -18,18 +18,32 @@ function LottieAnimation() {
 
     // Clean up animation when component unmounts
     return () => {
-      anim.destroy();
+      if (animRef.current) {
+        animRef.current.destroy();
+      }
     };
   }, []); // Empty dependency array ensures useEffect runs only once
 
   const handleAnimationClick = () => {
-    if (anim.isPaused) {
-      console.log(anim.isPaused);
-      // Play the next 2 seconds of the animation from the current time
-      anim.playSegments([anim.currentRawTime, anim.currentRawTime + 0.2], true);
-    } else {
-      // Pause the animation
-      anim.pause();
+    // Check if the animation instance is available
+    if (animRef.current) {
+      // Get the current frame of the animation
+      const currentFrame = animRef.current.currentFrame;
+
+      console.log(currentFrame);
+
+      if (animRef.current.isPaused) {
+        // If the current frame is 43, play frames 115-177
+        if (currentFrame === 42) {
+          animRef.current.playSegments([115, 177], true);
+        } else {
+          // Otherwise, play frames 0 to 43 and then pause
+          animRef.current.playSegments([0, 43], true);
+        }
+      } else {
+        // Pause the animation
+        animRef.current.pause();
+      }
     }
   };
 

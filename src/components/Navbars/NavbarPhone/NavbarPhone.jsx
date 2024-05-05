@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import gsap from "gsap";
-import hamburger from "../../../assets/menu.png";
 import logo from "../../../assets/solarLogo.jpeg";
 import "./navbarphone.css";
 import { useNavigate } from "react-router-dom";
@@ -16,9 +15,9 @@ export function NavbarPhone() {
       setIsHamburgerActive(true);
     } else if (isHamburgerActive) {
       gsap.to(".navbar-phone-dropdown-main-container", {
-        x: "100%",
-        duration: 0.6,
-        ease: "power4.out",
+        x: "-100%",
+        duration: 1.5,
+        ease: "power4.inOut",
         onComplete: () => {
           setIsHamburgerActive(false);
         },
@@ -30,9 +29,9 @@ export function NavbarPhone() {
     if (link === "/aboutUs") {
       navigate(link);
       gsap.to(".navbar-phone-dropdown-main-container", {
-        x: "100%",
-        duration: 1,
-        ease: "power4.out",
+        x: "-100%",
+        duration: 1.5,
+        ease: "power4.inOut",
       });
       setTimeout(() => {
         setIsHamburgerActive(false);
@@ -43,9 +42,9 @@ export function NavbarPhone() {
   function handleHomeNavigate() {
     navigate("/");
     gsap.to(".navbar-phone-dropdown-main-container", {
-      x: "100%",
-      duration: 0.6,
-      ease: "power4.out",
+      x: "-100%",
+      duration: 1.5,
+      ease: "power4.inOut",
     });
     setTimeout(() => {
       setIsHamburgerActive(false);
@@ -55,9 +54,9 @@ export function NavbarPhone() {
   useEffect(() => {
     if (isHamburgerActive) {
       gsap.from(".navbar-phone-dropdown-main-container", {
-        x: "100%",
-        duration: 1,
-        ease: "power4.out",
+        x: "-100%",
+        duration: 1.5,
+        ease: "power3.inOut",
       });
     }
   }, [isHamburgerActive]);
@@ -78,12 +77,11 @@ export function NavbarPhone() {
         className="navbar-logo"
         onClick={() => handleHomeNavigate()}
       />
-      <img
-        src={hamburger}
+
+      <div
         className="navbar-phone-hamburger"
         onClick={() => handleActivateHamburger()}
-      />
-      <div className="navbar-phone-hamburger">
+      >
         <LottieAnimation />
       </div>
 
