@@ -27,8 +27,7 @@ function LottieAnimation() {
   const handleAnimationClick = () => {
     if (animRef.current) {
       const currentFrame = animRef.current.currentFrame;
-      console.log(currentFrame);
-      console.log(animRef.current.isPaused);
+
       if (animRef.current.isPaused) {
         if (currentFrame === 42) {
           animRef.current.playSegments([currentFrame, 0], true);
