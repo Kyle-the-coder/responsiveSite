@@ -61,6 +61,8 @@ export function NavbarPhone() {
     }
   }, [isHamburgerActive]);
 
+  console.log("ham", isHamburgerActive);
+
   const links = [
     { linkName: "About Us", link: "/aboutUs" },
     { linkName: "Product" },
