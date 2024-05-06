@@ -16,8 +16,8 @@ export function NavbarPhone() {
     } else if (isHamburgerActive) {
       gsap.to(".navbar-phone-dropdown-main-container", {
         x: "-100%",
-        duration: 1.5,
-        ease: "power4.inOut",
+        duration: 1.3,
+        ease: "power4.in",
         onComplete: () => {
           setIsHamburgerActive(false);
         },
@@ -30,12 +30,12 @@ export function NavbarPhone() {
       navigate(link);
       gsap.to(".navbar-phone-dropdown-main-container", {
         x: "-100%",
-        duration: 1.5,
-        ease: "power4.inOut",
+        duration: 1.4,
+        ease: "power4.in",
+        onComplete: () => {
+          setIsHamburgerActive(false);
+        },
       });
-      setTimeout(() => {
-        setIsHamburgerActive(false);
-      }, 300);
     }
   }
 
@@ -43,25 +43,23 @@ export function NavbarPhone() {
     navigate("/");
     gsap.to(".navbar-phone-dropdown-main-container", {
       x: "-100%",
-      duration: 1.5,
-      ease: "power4.inOut",
+      duration: 1.4,
+      ease: "power4.in",
+      onComplete: () => {
+        setIsHamburgerActive(false);
+      },
     });
-    setTimeout(() => {
-      setIsHamburgerActive(false);
-    }, 300);
   }
 
   useEffect(() => {
     if (isHamburgerActive) {
       gsap.from(".navbar-phone-dropdown-main-container", {
         x: "-100%",
-        duration: 1.5,
+        duration: 1.2,
         ease: "power3.inOut",
       });
     }
   }, [isHamburgerActive]);
-
-  console.log("ham", isHamburgerActive);
 
   const links = [
     { linkName: "About Us", link: "/aboutUs" },
