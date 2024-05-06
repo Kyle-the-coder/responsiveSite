@@ -25,23 +25,23 @@ function LottieAnimation() {
   }, []); // Empty dependency array ensures useEffect runs only once
 
   const handleAnimationClick = () => {
-    // Check if the animation instance is available
     if (animRef.current) {
-      // Get the current frame of the animation
       const currentFrame = animRef.current.currentFrame;
-
       console.log(currentFrame);
-
+      console.log(animRef.current.isPaused);
       if (animRef.current.isPaused) {
-        // If the current frame is 43, play frames 115-177
         if (currentFrame === 42) {
-          animRef.current.playSegments([115, 177], true);
-        } else {
-          // Otherwise, play frames 0 to 43 and then pause
+          animRef.current.playSegments([currentFrame, 0], true);
+        } else if (currentFrame === 0) {
           animRef.current.playSegments([0, 43], true);
         }
+      } else if (
+        !animRef.current.isPaused &&
+        currentFrame > 0 &&
+        currentFrame < 42
+      ) {
+        animRef.current.playSegments([currentFrame, 0], true);
       } else {
-        // Pause the animation
         animRef.current.pause();
       }
     }
