@@ -6,26 +6,31 @@ import { useNavigate } from "react-router-dom";
 import LottieAnimation from "../../LottieAnimation";
 
 export function NavbarPhone() {
-  const [isHamburgerActive, setIsHamburgerActive] = useState(false);
+  const [isHamburgerActive, setIsHamburgerActive] = useState(null);
+  const [isAnimationActive, setIsAnimtionActive] = useState(null);
 
   const navigate = useNavigate();
 
   function handleActivateHamburger() {
     if (!isHamburgerActive) {
       setIsHamburgerActive(true);
+      setIsAnimtionActive(true);
     } else if (isHamburgerActive) {
+      setIsAnimtionActive(false);
       gsap.to(".navbar-phone-dropdown-main-container", {
         x: "-100%",
         duration: 1.3,
         ease: "power4.in",
         onComplete: () => {
           setIsHamburgerActive(false);
+          setIsAnimtionActive(null);
         },
       });
     }
   }
 
   function handleNavigate(link) {
+    setIsAnimtionActive(false);
     if (link === "/aboutUs") {
       navigate(link);
       gsap.to(".navbar-phone-dropdown-main-container", {
@@ -40,6 +45,7 @@ export function NavbarPhone() {
   }
 
   function handleHomeNavigate() {
+    setIsAnimtionActive(false);
     navigate("/");
     gsap.to(".navbar-phone-dropdown-main-container", {
       x: "-100%",
@@ -82,7 +88,10 @@ export function NavbarPhone() {
         className="navbar-phone-hamburger"
         onClick={() => handleActivateHamburger()}
       >
-        <LottieAnimation />
+        <LottieAnimation
+          isHamburgerActive={isHamburgerActive}
+          isAnimationActive={isAnimationActive}
+        />
       </div>
 
       {isHamburgerActive && (
