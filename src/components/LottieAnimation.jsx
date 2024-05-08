@@ -6,9 +6,6 @@ function LottieAnimation({ isHamburgerActive, isAnimationActive }) {
   const containerRef = useRef(null);
   const animRef = useRef(null);
 
-  console.log("anim", isAnimationActive);
-  console.log("ham", isHamburgerActive);
-
   useEffect(() => {
     animRef.current = lottie.loadAnimation({
       container: containerRef.current,
