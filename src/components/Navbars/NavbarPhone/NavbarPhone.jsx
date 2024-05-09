@@ -9,24 +9,6 @@ export function NavbarPhone() {
   const [isHamburgerActive, setIsHamburgerActive] = useState(null);
   const [isAnimationActive, setIsAnimtionActive] = useState(null);
 
-  function despawnDropdown() {
-    gsap.to(".navbar-phone-dropdown-main-container", {
-      x: "-100%",
-      duration: 1.3,
-      ease: "power4.in",
-      onComplete: () => {
-        setIsHamburgerActive(false);
-        setIsAnimtionActive(null);
-      },
-    });
-  }
-
-  const spawnDropdown = gsap.from(".navbar-phone-dropdown-main-container", {
-    x: "-100%",
-    duration: 1.2,
-    ease: "power3.inOut",
-  });
-
   const navigate = useNavigate();
 
   function handleActivateHamburger() {
@@ -35,7 +17,14 @@ export function NavbarPhone() {
       setIsAnimtionActive(true);
     } else if (isHamburgerActive) {
       setIsAnimtionActive(false);
-      despawnDropdown();
+      gsap.to(".navbar-phone-dropdown-main-container", {
+        x: "-100%",
+        duration: 1.4,
+        ease: "power4.in",
+        onComplete: () => {
+          setIsHamburgerActive(false);
+        },
+      });
     }
   }
 
