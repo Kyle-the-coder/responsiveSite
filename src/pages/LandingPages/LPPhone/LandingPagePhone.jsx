@@ -38,7 +38,10 @@ export function LandingPagePhone() {
         </div>
       </div>
 
-      <div className="landing-page-3D-container"></div>
+      <div className="landing-page-3D-container">
+        {" "}
+        <spline-viewer url="https://prod.spline.design/jxeLwKuL0cDmV8eb/scene.splinecode"></spline-viewer>
+      </div>
     </div>
   );
 }
